@@ -1,0 +1,115 @@
+import { MetricItem } from './types';
+
+export const metricsData: Record<'today' | '7d' | '30d', Record<string, MetricItem>> = {
+  today: {
+    revenue: {
+      label: 'Daily Revenue',
+      value: '$46,280',
+      delta: 8.4,
+      direction: 'up',
+      sparkline: [38, 41, 39, 45, 42, 48, 46],
+    },
+    mrr: {
+      label: 'Monthly Recurring Revenue',
+      value: '$618,450',
+      delta: 0.8,
+      direction: 'up',
+      sparkline: [612, 614, 615, 616, 617, 618, 618],
+    },
+    subscribers: {
+      label: 'New Subscribers',
+      value: '184',
+      delta: 12.2,
+      direction: 'up',
+      sparkline: [120, 140, 135, 160, 150, 172, 184],
+    },
+    churn: {
+      label: 'Churn Rate',
+      value: '4.68%',
+      delta: -2.1,
+      direction: 'down',
+      sparkline: [4.9, 4.85, 4.8, 4.75, 4.72, 4.7, 4.68],
+    },
+    roas: {
+      label: 'Blended ROAS',
+      value: '2.82x',
+      delta: 5.6,
+      direction: 'up',
+      sparkline: [2.5, 2.6, 2.58, 2.7, 2.68, 2.75, 2.82],
+    },
+  },
+  '7d': {
+    revenue: {
+      label: '7d Revenue',
+      value: '$318,450',
+      delta: 4.2,
+      direction: 'up',
+      sparkline: [290, 305, 310, 298, 312, 315, 318],
+    },
+    mrr: {
+      label: 'Monthly Recurring Revenue',
+      value: '$618,450',
+      delta: 2.1,
+      direction: 'up',
+      sparkline: [605, 608, 610, 612, 615, 616, 618],
+    },
+    subscribers: {
+      label: 'New Subscribers',
+      value: '1,284',
+      delta: 6.8,
+      direction: 'up',
+      sparkline: [1150, 1200, 1220, 1190, 1240, 1260, 1284],
+    },
+    churn: {
+      label: 'Churn Rate',
+      value: '4.68%',
+      delta: -4.5,
+      direction: 'down',
+      sparkline: [4.95, 4.9, 4.82, 4.78, 4.73, 4.7, 4.68],
+    },
+    roas: {
+      label: 'Blended ROAS',
+      value: '2.78x',
+      delta: 3.1,
+      direction: 'up',
+      sparkline: [2.62, 2.65, 2.7, 2.68, 2.72, 2.75, 2.78],
+    },
+  },
+  '30d': {
+    revenue: {
+      label: '30d Revenue',
+      value: '$1,384,900',
+      delta: 14.8,
+      direction: 'up',
+      sparkline: [1120, 1150, 1190, 1230, 1280, 1340, 1384],
+    },
+    mrr: {
+      label: 'Monthly Recurring Revenue',
+      value: '$618,450',
+      delta: 8.5,
+      direction: 'up',
+      sparkline: [565, 578, 590, 602, 610, 614, 618],
+    },
+    subscribers: {
+      label: 'New Subscribers',
+      value: '5,482',
+      delta: 18.2,
+      direction: 'up',
+      sparkline: [4500, 4700, 4850, 5020, 5200, 5350, 5482],
+    },
+    churn: {
+      label: 'Churn Rate',
+      value: '4.68%',
+      delta: -12.4,
+      direction: 'down',
+      sparkline: [5.3, 5.15, 5.0, 4.92, 4.84, 4.76, 4.68],
+    },
+    roas: {
+      label: 'Blended ROAS',
+      value: '2.74x',
+      delta: 9.6,
+      direction: 'up',
+      sparkline: [2.45, 2.5, 2.58, 2.62, 2.68, 2.72, 2.74],
+    },
+  },
+};

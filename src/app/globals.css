@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F6F8FB;
+  --foreground: #0F172A;
+  --card: rgba(255, 255, 255, 0.85);
+  --card-foreground: #0F172A;
+  --border: rgba(15, 23, 42, 0.08);
+  --muted: #64748B;
+  
+  --primary: #14B8A6;
+  --primary-glow: #2DD4BF;
+  --secondary: #6366F1;
+  --secondary-glow: #818CF8;
+  
+  --brand-navy: #0E1626;
+  --emerald-accent: #10B981;
+  --amber-accent: #F59E0B;
+  --rose-accent: #EF4444;
+
+  --sidebar-width: 260px;
+}
+
+.dark {
+  --background: #0A0F1C;
+  --foreground: #E8EDF4;
+  --card: rgba(17, 26, 46, 0.7);
+  --card-foreground: #E8EDF4;
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: #8B97AC;
+  
+  --primary: #14B8A6;
+  --primary-glow: #2DD4BF;
+  --secondary: #6366F1;
+  --secondary-glow: #818CF8;
+  
+  --brand-navy: #0E1626;
+  --emerald-accent: #34D399;
+  --amber-accent: #FBBF24;
+  --rose-accent: #FB7185;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-glow: var(--secondary-glow);
+  --color-brand-navy: var(--brand-navy);
+  --color-emerald-accent: var(--emerald-accent);
+  --color-amber-accent: var(--amber-accent);
+  --color-rose-accent: var(--rose-accent);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Base Body Setup */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Utilities */
+
+/* Gradient Mesh Background */
+.gradient-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.04) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(20, 184, 166, 0.03) 0px, transparent 50%);
+}
+
+.dark .gradient-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.07) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.07) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(20, 184, 166, 0.05) 0px, transparent 50%);
+}
+
+/* Glassmorphic Cards */
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .glass-card {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+  border-color: rgba(20, 184, 166, 0.25);
+  box-shadow: 0 10px 40px rgba(20, 184, 166, 0.08);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Glow Highlights */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.15);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+/* Custom Chart Tooltip styling */
+.chart-tooltip {
+  background: rgba(17, 26, 46, 0.95) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  color: #E8EDF4 !important;
+}
+
+.light .chart-tooltip {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #0F172A !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Text adjustments */
+.text-tabular {
+  font-variant-numeric: tabular-nums;
+}
